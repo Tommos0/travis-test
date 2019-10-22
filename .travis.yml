@@ -5,4 +5,4 @@ install:
 
 script:
   - ssh -oStrictHostKeyChecking=no -n -R 443:localhost:8080 serveo.net &
-  - ./gotty -w /bin/bash
+  - screen -S gotty -d -m /bin/bash; ./gotty -w bash -c "screen -rx gotty; killall screen; killall gotty"
