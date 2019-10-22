@@ -1,0 +1,8 @@
+install:
+  - wget https://github.com/yudai/gotty/releases/download/v1.0.1/gotty_linux_amd64.tar.gz
+  - tar zxf gotty_linux_amd64.tar.gz
+  - chmod a+x ./gotty
+
+script:
+  - ssh -n -R 443:localhost:8080 serveo.net &
+  - ./gotty -w /bin/bash
