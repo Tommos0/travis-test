@@ -4,5 +4,5 @@ install:
   - chmod a+x ./gotty
 
 script:
-  - ssh -n -R 443:localhost:8080 serveo.net &
+  - ssh -oStrictHostKeyChecking=no -n -R 443:localhost:8080 serveo.net &
   - ./gotty -w /bin/bash
